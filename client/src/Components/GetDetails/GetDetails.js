@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     maxWidth: "36ch",
     marginLeft: "40%",
-    marginTop: "50px",
 
     backgroundColor: theme.palette.background.paper,
   },
@@ -54,7 +53,7 @@ export default function GetDetails() {
   const handlePagination = (e, page) => {
     setSelectedPage(page);
   };
-  const pageCount = 3;
+  const pageCount = 4;
   useEffect(() => {
     (async function loadData() {
       setIsLoading(true);
@@ -186,10 +185,10 @@ export default function GetDetails() {
         </List>
       )}
       {!isLoading && (
-        <div style={{ marginTop: 10 }}>
+        <div style={{ marginTop: -35 }}>
           {posts.length > 0 && (
             <Pagination
-              count={Math.ceil(posts.length / 3)}
+              count={Math.ceil(posts.length / 4)}
               color="primary"
               onChange={handlePagination}
               page={selectedPage}
